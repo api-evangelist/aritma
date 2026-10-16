@@ -1,0 +1,85 @@
+generated: '2026-10-16'
+method: derived
+generator: derive-mcp-candidate.py
+source:
+- openapi/_ae-authored/aritma-openapi-generated.yml
+status: candidate
+deployment:
+  mode: none
+  auth: unknown
+  verified: probed
+note: 'No MCP server was found. The pre-flight posted tools/list to /mcp on api.aritma.com, aritma.com, customer-portal.aritma.com, developer.aritma.com;
+  verdict opaque (https://customer-portal.aritma.com/mcp answered 403: the edge authenticates before it routes, which proves nothing either way).
+  Candidate tools below are derived from the 14 operation(s) in the provider''s own OpenAPI (14 listed); they describe what a server WOULD expose,
+  not one that exists.'
+tools:
+- name: get_mock_apis_banking_v4_openapi_banking_openapi_banks
+  operationId: get_mock_apis_banking_v4_openapi_banking_openapi_banks
+  method: GET
+  path: /_mock/apis/banking/v4/openapi/banking-openapi/banks
+  description: GET /_mock/apis/banking/v4/openapi/banking-openapi/banks
+- name: post_mock_apis_banking_v4_openapi_banking_openapi_bulk_payme
+  operationId: post_mock_apis_banking_v4_openapi_banking_openapi_bulk_payments_credit_transfer
+  method: POST
+  path: /_mock/apis/banking/v4/openapi/banking-openapi/bulk-payments/credit-transfer
+  description: POST /_mock/apis/banking/v4/openapi/banking-openapi/bulk-payments/credit-transfer
+- name: get_accounts
+  operationId: get_accounts
+  method: GET
+  path: /accounts
+  description: Retrieve the onboarded accounts with GET /accounts.
+- name: get_api
+  operationId: get_api
+  method: GET
+  path: /api
+  description: GET /api
+- name: post_api_bulk_payments_credit_transfer
+  operationId: post_api_bulk_payments_credit_transfer
+  method: POST
+  path: /api/bulk-payments/credit-transfer
+  description: Initiate a payment via POST /api/bulk-payments/credit-transfer
+- name: post_api_consents
+  operationId: post_api_consents
+  method: POST
+  path: /api/consents
+  description: Consents
+- name: put_api_v3_companies_companyid_subscriptions_subscriptionnam
+  operationId: put_api_v3_companies_companyid_subscriptions_subscriptionname
+  method: PUT
+  path: /api/v3/companies/{companyid}/subscriptions/{subscriptionname}
+  description: Webhooks Overview
+- name: get_api_v3_events_deadletters
+  operationId: get_api_v3_events_deadletters
+  method: GET
+  path: /api/v3/events/deadletters
+  description: Webhooks Overview
+- name: get_banks
+  operationId: get_banks
+  method: GET
+  path: /banks
+  description: Call GET /banks to find the bank and get its bankId.
+- name: get_banks_bankid
+  operationId: get_banks_bankid
+  method: GET
+  path: /banks/{bankid}
+  description: Use GET /banks/{bankId} with includeAdditionalInformation=true to discover bank‑specific property requirements.
+- name: post_consents
+  operationId: post_consents
+  method: POST
+  path: /consents
+  description: Consents
+- name: get_consents_consentid
+  operationId: get_consents_consentid
+  method: GET
+  path: /consents/{consentid}
+  description: Check consent status by polling GET /consents/{consentId}.
+- name: delete_consents_id
+  operationId: delete_consents_id
+  method: DELETE
+  path: /consents/{id}
+  description: Consents
+- name: put_consents_id_refresh
+  operationId: put_consents_id_refresh
+  method: PUT
+  path: /consents/{id}/{refresh}
+  description: Refresh the consent to generate a new SCA link.

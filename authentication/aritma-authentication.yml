@@ -1,0 +1,34 @@
+generated: '2026-10-16'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://developer.aritma.com/apis/platform/ids/acr_values.md
+sources:
+- https://developer.aritma.com/apis/platform/ids/acr_values.md
+- https://developer.aritma.com/apis/banking/data-gateway/development/authentication.md
+- https://developer.aritma.com/apis/banking/v3/development/2-authentication.md
+- https://developer.aritma.com/apis/banking/v4/development/authentication.md
+description: Aritma APIs use OpenID Connect / OAuth 2.0 client credentials flow. Clients obtain an access token by POSTing client_id and client_secret
+  to the token endpoint and then send the token in the Authorization header as a Bearer token.
+schemes:
+- type: oauth2
+  name: Data Gateway OAuth2
+  evidence: The Data Gateway API uses OpenID Connect with the OAuth 2.0 standard for authenticating access tokens.
+  flows:
+  - client_credentials
+  token_url: https://id.aritma.io/connect/token
+  scopes:
+  - api
+  how_to_obtain: POST client_id and client_secret (and optional scope) to the token endpoint using application/x-www-form-urlencoded.
+- type: oauth2
+  name: Banking API OAuth2
+  evidence: The Banking API uses OpenID Connect with the OAuth 2.0 standard for authenticating access tokens.
+  flows:
+  - client_credentials
+  token_url: https://id.aritma.io/{tenantId}/connect/token
+  scopes:
+  - api
+  how_to_obtain: POST client_id and client_secret (and optional scope) to the token endpoint using application/x-www-form-urlencoded, replacing
+    {tenantId} with your tenant ID.
+note: 'All APIs require the access token to be sent in the HTTP Authorization header as: Authorization: Bearer <token>. 1 extracted row(s) were
+  dropped because their quote was not on the page.'
+docs: https://developer.aritma.com/apis/platform/ids/acr_values.md

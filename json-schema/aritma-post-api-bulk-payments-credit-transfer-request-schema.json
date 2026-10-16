@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aritma/main/json-schema/aritma-post-api-bulk-payments-credit-transfer-request-schema.json",
+  "title": "PostApiBulkPaymentsCreditTransferRequest",
+  "x-generated": "2026-10-16",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/aritma-openapi-generated.yml#/components/schemas/PostApiBulkPaymentsCreditTransferRequest",
+  "type": "object",
+  "properties": {
+    "debtorAccount": {
+      "type": "object",
+      "description": "Debtor account details"
+    },
+    "debtorAccount.iban": {
+      "type": "string",
+      "description": "IBAN of the debtor account"
+    },
+    "debtorName": {
+      "type": "string",
+      "description": "Name of the debtor"
+    },
+    "batchBookingPreferred": {
+      "type": "boolean",
+      "description": "Whether batch booking is preferred"
+    },
+    "paymentLines": {
+      "type": "array",
+      "description": "List of payment line objects"
+    },
+    "paymentLines[].endToEndIdentification": {
+      "type": "string",
+      "description": "End‑to‑end identification for the payment line"
+    },
+    "paymentLines[].instructedAmount": {
+      "type": "object",
+      "description": "Amount to be transferred"
+    },
+    "paymentLines[].instructedAmount.currency": {
+      "type": "string",
+      "description": "Currency code (e.g., NOK)"
+    },
+    "paymentLines[].instructedAmount.amount": {
+      "type": "string",
+      "description": "Amount value"
+    },
+    "paymentLines[].creditorAccount": {
+      "type": "object",
+      "description": "Creditor account details"
+    },
+    "paymentLines[].creditorAccount.iban": {
+      "type": "string",
+      "description": "IBAN of the creditor account"
+    },
+    "paymentLines[].creditorName": {
+      "type": "string",
+      "description": "Name of the creditor"
+    },
+    "paymentLines[].remittanceInformationUnstructured": {
+      "type": "string",
+      "description": "Unstructured remittance information"
+    },
+    "paymentLines[].instructionPriority": {
+      "type": "string",
+      "description": "Priority of the instruction (e.g., normal)"
+    }
+  },
+  "required": [
+    "debtorAccount",
+    "debtorAccount.iban",
+    "debtorName",
+    "paymentLines",
+    "paymentLines[].endToEndIdentification",
+    "paymentLines[].instructedAmount",
+    "paymentLines[].instructedAmount.currency",
+    "paymentLines[].instructedAmount.amount",
+    "paymentLines[].creditorAccount",
+    "paymentLines[].creditorAccount.iban",
+    "paymentLines[].creditorName"
+  ]
+}

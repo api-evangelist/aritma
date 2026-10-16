@@ -1,0 +1,20 @@
+generated: '2026-10-16'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://developer.aritma.com/apis/banking/v4/openapi/banking-openapi/section/api-versioning
+sources:
+- https://developer.aritma.com/apis/banking/v4/openapi/banking-openapi/section/api-versioning
+- https://help.aritma.com/no-no/native-client-11.0-sql-server-login-failed-for-user-deprecated-0
+- https://developer.aritma.com/getting-started.md
+- https://developer.aritma.com/apis/banking/data-gateway/quickstart.md
+versioning:
+  how_selected: header
+  docs: 'Use a specific version of the API by specifying the api-version header, for example api-version: 1.0 . If you don''t specify the header,
+    the latest version will be used.'
+deprecation:
+  policy: 'If a version has been scheduled to be removed, it will be reported through the api-deprecated-versions header, for example api-deprecated-versions:
+    1.0, 1.1 .'
+  headers:
+  - api-deprecated-versions
+status_page: null
+docs: https://developer.aritma.com/apis/banking/v4/openapi/banking-openapi/section/api-versioning

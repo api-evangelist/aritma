@@ -1,0 +1,21 @@
+generated: '2026-10-16'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://developer.aritma.com/apis/banking/v3/webhooks/1-overview.md
+sources:
+- https://developer.aritma.com/apis/banking/v3/webhooks/1-overview.md
+- https://developer.aritma.com/apis/banking/v3/webhooks/2-event-types.md
+- https://developer.aritma.com/apis/banking/v3/webhooks/3-quickstart.md
+- https://developer.aritma.com/apis/banking/v4/webhooks/overview.md
+description: Aritma webhooks use Azure Event Grid and require a validation handshake (returning the validation code in the response body).
+events:
+- event: ZData.Events.Bank.StatementsReceived
+  description: Event indicating that a statement has been received.
+- event: ZData.Events.Bank.SettlementReceived
+  description: Event indicating that a settlement has been received.
+- event: ZData.Events.Bank.PaymentStatusUpdated
+  description: Event indicating that a payment status has been updated.
+delivery:
+  retries: The API will retry delivery up to 30 times with exponential back‑off, delaying subsequent deliveries after repeated failures.
+docs: https://developer.aritma.com/apis/banking/v3/webhooks/1-overview.md
+note: 6 extracted row(s) were dropped because their quote was not on the page.

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aritma/main/json-schema/aritma-put-api-v3-companies-companyid-subscriptions-subscriptionname-reque-schema.json",
+  "title": "PutApiV3CompaniesCompanyidSubscriptionsSubscriptionnameReque",
+  "x-generated": "2026-10-16",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/aritma-openapi-generated.yml#/components/schemas/PutApiV3CompaniesCompanyidSubscriptionsSubscriptionnameReque",
+  "type": "object",
+  "properties": {
+    "eventTypes": {
+      "type": "array",
+      "description": "A comma-delimited list of Event Types."
+    },
+    "destination": {
+      "type": "object",
+      "description": "Object defining how and where events should be delivered."
+    },
+    "destination.endpointUrl": {
+      "type": "string",
+      "description": "The url of your webhook endpoint."
+    },
+    "destination.maxEventsPerBatch": {
+      "type": "integer",
+      "description": "Maximum number of events in a batch (1‑5000)."
+    },
+    "destination.preferredBatchSizeInKilobytes": {
+      "type": "integer",
+      "description": "Preferred batch size in kilobytes (1‑1024)."
+    }
+  },
+  "required": [
+    "eventTypes",
+    "destination",
+    "destination.endpointUrl"
+  ]
+}

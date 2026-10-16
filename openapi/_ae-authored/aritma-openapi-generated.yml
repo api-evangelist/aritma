@@ -1,0 +1,660 @@
+openapi: 3.1.0
+info:
+  title: Aritma API
+  version: '2026-10-16'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-16: 14 operation(s) read from 7 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; Aritma has published no machine-readable contract that the pipeline
+    could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 4
+    documentation: 10
+    pages-with-code: 5
+    pages-read: 7
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-16'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://developer.aritma.com/apis/banking/v4/about/consent.md
+  - https://developer.aritma.com/apis/banking/v4/guides/onboarding
+  - https://developer.aritma.com/apis/banking/v3/webhooks/1-overview
+  - https://developer.aritma.com/apis/banking/v4/guides/onboarding.md
+  - https://developer.aritma.com/apis/banking/v3/webhooks/1-overview.md
+  - https://developer.aritma.com/apis/banking/v4/development/overview.md
+  - https://developer.aritma.com/apis/banking/v4/guides/payment-approval
+servers:
+- url: https://bankservice.zdata.no
+paths:
+  /_mock/apis/banking/v4/openapi/banking-openapi/banks:
+    get:
+      operationId: get_mock_apis_banking_v4_openapi_banking_openapi_banks
+      tags:
+      - Mock
+      summary: GET /_mock/apis/banking/v4/openapi/banking-openapi/banks
+      x-source: https://developer.aritma.com/apis/banking/v4/guides/onboarding
+      parameters:
+      - name: channels
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: countryCode
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: includeAdditionalInformation
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl curl -i -X GET  ''https://developer.aritma.com/_mock/apis/banking/v4/openapi/banking-openapi/banks?countryCode=NO&channels=string&includeAdditionalInformation=true''  -H
+          ''api-version: string'' Note: Some banks include an onboarding field with links to external onboarding documents or pages. Check these
+          for any bank-specific requirements before proceeding. Try it out Loading... Step 2: Create a c'
+  /_mock/apis/banking/v4/openapi/banking-openapi/bulk-payments/credit-transfer:
+    post:
+      operationId: post_mock_apis_banking_v4_openapi_banking_openapi_bulk_payments_credit_transfer
+      tags:
+      - Mock
+      summary: POST /_mock/apis/banking/v4/openapi/banking-openapi/bulk-payments/credit-transfer
+      x-source: https://developer.aritma.com/apis/banking/v4/guides/payment-approval
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostMockApisBankingV4OpenapiBankingOpenapiBulkPaymentsCredit'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl curl -i -X POST  https://developer.aritma.com/_mock/apis/banking/v4/openapi/banking-openapi/bulk-payments/credit-transfer  -H
+          ''Authorization: Bearer <YOUR_TOKEN_HERE>''  -H ''Channel-Type: unspecified''  -H ''Consent-ID: string''  -H ''Content-Type: application/json''  -H
+          ''PSU-IP-Address: string''  -H ''Resource-Group-Name: string''  -H ''Scopes: /subscriptions/7fdf00601dfb/resource-groups/my-company''  '
+  /accounts:
+    get:
+      operationId: get_accounts
+      tags:
+      - Accounts
+      summary: Retrieve the onboarded accounts with GET /accounts.
+      x-source: https://developer.aritma.com/apis/banking/v4/guides/onboarding
+      parameters:
+      - name: withBalance
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Include balance information.
+      - name: balanceDate
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Date for the balance snapshot.
+      - name: bban
+        in: query
+        required: false
+        schema:
+          type: string
+        description: BBAN filter.
+      - name: iban
+        in: query
+        required: false
+        schema:
+          type: string
+        description: IBAN filter.
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Search term.
+      - name: cursor
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Pagination cursor.
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Bearer token.
+      - name: Channel-Type
+        in: header
+        required: false
+        schema:
+          type: string
+        description: Channel type, e.g., openBanking.
+      - name: Consent-ID
+        in: header
+        required: false
+        schema:
+          type: string
+        description: Consent identifier.
+      - name: PSU-IP-Address
+        in: header
+        required: false
+        schema:
+          type: string
+        description: IP address of the PSU.
+      - name: Resource-Group-Name
+        in: header
+        required: false
+        schema:
+          type: string
+        description: Resource group name (organization number).
+      - name: Scopes
+        in: header
+        required: false
+        schema:
+          type: string
+        description: Scope path, e.g., /subscriptions/.../resource-groups/...
+      - name: Subscription-Id
+        in: header
+        required: false
+        schema:
+          type: string
+        description: Subscription identifier.
+      - name: api-version
+        in: header
+        required: false
+        schema:
+          type: string
+        description: API version header.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAccountsResponse'
+      x-evidence:
+        kind: documentation
+  /api:
+    get:
+      operationId: get_api
+      tags:
+      - Api
+      summary: GET /api
+      x-source: https://developer.aritma.com/apis/banking/v4/development/overview.md
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: httpie
+        snippet: 'http
+
+          https://banking.aritma.io/api'
+  /api/bulk-payments/credit-transfer:
+    post:
+      operationId: post_api_bulk_payments_credit_transfer
+      tags:
+      - Api
+      summary: Initiate a payment via POST /api/bulk-payments/credit-transfer
+      x-source: https://developer.aritma.com/apis/banking/v4/guides/payment-approval
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiBulkPaymentsCreditTransferRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /api/consents:
+    post:
+      operationId: post_api_consents
+      tags:
+      - Api
+      summary: Consents
+      x-source: https://developer.aritma.com/apis/banking/v4/about/consent.md
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /api/v3/companies/{companyid}/subscriptions/{subscriptionname}:
+    put:
+      operationId: put_api_v3_companies_companyid_subscriptions_subscriptionname
+      tags:
+      - Api
+      summary: Webhooks Overview
+      x-source: https://developer.aritma.com/apis/banking/v3/webhooks/1-overview
+      parameters:
+      - name: companyid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: subscriptionname
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutApiV3CompaniesCompanyidSubscriptionsSubscriptionnameReque'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutApiV3CompaniesCompanyidSubscriptionsSubscriptionnameRespo'
+      x-evidence:
+        kind: documentation
+  /api/v3/events/deadletters:
+    get:
+      operationId: get_api_v3_events_deadletters
+      tags:
+      - Api
+      summary: Webhooks Overview
+      x-source: https://developer.aritma.com/apis/banking/v3/webhooks/1-overview
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiV3EventsDeadlettersResponse'
+      x-evidence:
+        kind: documentation
+  /banks:
+    get:
+      operationId: get_banks
+      tags:
+      - Banks
+      summary: Call GET /banks to find the bank and get its bankId.
+      x-source: https://developer.aritma.com/apis/banking/v4/guides/onboarding
+      parameters:
+      - name: countryCode
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Country code filter.
+      - name: channels
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Channel filter.
+      - name: includeAdditionalInformation
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to include additional information.
+      - name: api-version
+        in: header
+        required: false
+        schema:
+          type: string
+        description: API version header.
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /banks/{bankid}:
+    get:
+      operationId: get_banks_bankid
+      tags:
+      - Banks
+      summary: Use GET /banks/{bankId} with includeAdditionalInformation=true to discover bank‑specific property requirements.
+      x-source: https://developer.aritma.com/apis/banking/v4/guides/onboarding
+      parameters:
+      - name: bankid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: includeAdditionalInformation
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to include additional information.
+      - name: api-version
+        in: header
+        required: false
+        schema:
+          type: string
+        description: API version header.
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /consents:
+    post:
+      operationId: post_consents
+      tags:
+      - Consents
+      summary: Consents
+      x-source: https://developer.aritma.com/apis/banking/v4/about/consent.md
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /consents/{consentid}:
+    get:
+      operationId: get_consents_consentid
+      tags:
+      - Consents
+      summary: Check consent status by polling GET /consents/{consentId}.
+      x-source: https://developer.aritma.com/apis/banking/v4/guides/onboarding
+      parameters:
+      - name: consentid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Bearer token.
+      - name: api-version
+        in: header
+        required: false
+        schema:
+          type: string
+        description: API version header.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetConsentsConsentidResponse'
+      x-evidence:
+        kind: documentation
+  /consents/{id}:
+    delete:
+      operationId: delete_consents_id
+      tags:
+      - Consents
+      summary: Consents
+      x-source: https://developer.aritma.com/apis/banking/v4/about/consent.md
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /consents/{id}/{refresh}:
+    put:
+      operationId: put_consents_id_refresh
+      tags:
+      - Consents
+      summary: Refresh the consent to generate a new SCA link.
+      x-source: https://developer.aritma.com/apis/banking/v4/guides/onboarding
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: refresh
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Bearer token.
+      - name: Content-Type
+        in: header
+        required: true
+        schema:
+          type: string
+        description: application/json.
+      - name: api-version
+        in: header
+        required: false
+        schema:
+          type: string
+        description: API version header.
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutConsentsIdRefreshRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutConsentsIdRefreshResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PostMockApisBankingV4OpenapiBankingOpenapiBulkPaymentsCredit:
+      type: object
+      properties:
+        debtorAccount:
+          type: object
+          properties:
+            iban:
+              type: string
+        debtorName:
+          type: string
+        batchBookingPreferred:
+          type: boolean
+        paymentLines:
+          type: array
+          items:
+            type: object
+            properties:
+              endToEndIdentification:
+                type: string
+              instructedAmount:
+                type: object
+                properties:
+                  currency:
+                    type: string
+                  amount:
+                    type: string
+              creditorAccount:
+                type: object
+                properties:
+                  iban:
+                    type: string
+              creditorName:
+                type: string
+              remittanceInformationUnstructured:
+                type: string
+              instructionPriority:
+                type: string
+    GetAccountsResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          description: Account status, e.g., enabled.
+    PostApiBulkPaymentsCreditTransferRequest:
+      type: object
+      properties:
+        debtorAccount:
+          type: object
+          description: Debtor account details
+        debtorAccount.iban:
+          type: string
+          description: IBAN of the debtor account
+        debtorName:
+          type: string
+          description: Name of the debtor
+        batchBookingPreferred:
+          type: boolean
+          description: Whether batch booking is preferred
+        paymentLines:
+          type: array
+          description: List of payment line objects
+        paymentLines[].endToEndIdentification:
+          type: string
+          description: End‑to‑end identification for the payment line
+        paymentLines[].instructedAmount:
+          type: object
+          description: Amount to be transferred
+        paymentLines[].instructedAmount.currency:
+          type: string
+          description: Currency code (e.g., NOK)
+        paymentLines[].instructedAmount.amount:
+          type: string
+          description: Amount value
+        paymentLines[].creditorAccount:
+          type: object
+          description: Creditor account details
+        paymentLines[].creditorAccount.iban:
+          type: string
+          description: IBAN of the creditor account
+        paymentLines[].creditorName:
+          type: string
+          description: Name of the creditor
+        paymentLines[].remittanceInformationUnstructured:
+          type: string
+          description: Unstructured remittance information
+        paymentLines[].instructionPriority:
+          type: string
+          description: Priority of the instruction (e.g., normal)
+      required:
+      - debtorAccount
+      - debtorAccount.iban
+      - debtorName
+      - paymentLines
+      - paymentLines[].endToEndIdentification
+      - paymentLines[].instructedAmount
+      - paymentLines[].instructedAmount.currency
+      - paymentLines[].instructedAmount.amount
+      - paymentLines[].creditorAccount
+      - paymentLines[].creditorAccount.iban
+      - paymentLines[].creditorName
+    PutApiV3CompaniesCompanyidSubscriptionsSubscriptionnameReque:
+      type: object
+      properties:
+        eventTypes:
+          type: array
+          description: A comma-delimited list of Event Types.
+        destination:
+          type: object
+          description: Object defining how and where events should be delivered.
+        destination.endpointUrl:
+          type: string
+          description: The url of your webhook endpoint.
+        destination.maxEventsPerBatch:
+          type: integer
+          description: Maximum number of events in a batch (1‑5000).
+        destination.preferredBatchSizeInKilobytes:
+          type: integer
+          description: Preferred batch size in kilobytes (1‑1024).
+      required:
+      - eventTypes
+      - destination
+      - destination.endpointUrl
+    PutApiV3CompaniesCompanyidSubscriptionsSubscriptionnameRespo:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Subscription created successfully.
+    GetApiV3EventsDeadlettersResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the event.
+        eventTime:
+          type: string
+          description: The time the event is generated.
+        eventType:
+          type: string
+          description: The type of the event.
+        dataVersion:
+          type: string
+          description: The schema version of the data object.
+        metadataVersion:
+          type: string
+          description: The schema version of the event metadata.
+        topic:
+          type: string
+          description: The full resource path to the event source.
+        subject:
+          type: string
+          description: The path describing what resource the event belongs to.
+        deadLetterReason:
+          type: string
+          description: The reason why the event was dead‑lettered.
+        deliveryAttempts:
+          type: integer
+          description: The amount of delivery attempts.
+        lastDeliveryOutcome:
+          type: string
+          description: Usually the response received from the webhook endpoint.
+        lastDeliveryAttemptTime:
+          type: string
+          description: The date of the last delivery attempt.
+        data:
+          type: object
+          description: The event data (see Event Messages for full description).
+    GetConsentsConsentidResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          description: Current status of the consent (Created, Started, Authorized, AwaitingApproval, etc.).
+    PutConsentsIdRefreshRequest:
+      type: object
+      properties:
+        properties:
+          type: string
+          description: Object with properties to change; can be empty.
+    PutConsentsIdRefreshResponse:
+      type: object
+      properties:
+        redirectUrl:
+          type: string
+          description: URL to send the customer to for strong customer authentication.
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security:
+- bearer: []
+tags:
+- name: Accounts
+- name: Api
+- name: Banks
+- name: Consents
+- name: Mock

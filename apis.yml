@@ -1,23 +1,139 @@
 aid: aritma
+
 name: Aritma
-description: 'Aritma is a company surfaced via the API Evangelist harvest backlog (source: g2-catalog)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://cdn.prod.website-files.com/6373dc3023ac2e946464f5b3/65805757fee228b9b87f2434_6572e8614112a5e3b5553b67_Open%20banking1.svg
+
+description: Aritma provides a finance automation platform for B2B enterprises, enabling seamless payments, reconciliation, and integration with
+  multiple ERP systems. Their API connects banks, ERP solutions like Microsoft Dynamics 365, Business NXT, Visma, and more, allowing developers
+  to build custom workflows for CFOs, accountants, and IT teams. The platform supports multi‑bank transactions, ISO‑20022 compliance, and offers
+  extensive documentation for developers to integrate financial data across systems.
+
 url: https://raw.githubusercontent.com/api-evangelist/aritma/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:g2-catalog
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-16 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-16'
+
 modified: '2026-10-16'
+
 tags:
 - Company
-apis: []
+- Finance
+- Automation
+- B2B
+- Payments
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Spectral
+  url: rules/aritma-rules.yml
+- type: JSONLD
+  url: json-ld/aritma-context.jsonld
+- type: Vocabulary
+  url: vocabulary/aritma-vocabulary.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Webhooks
+  url: asyncapi/aritma-webhooks.yml
+- type: DataModel
+  url: data-model/aritma-data-model.yml
+- type: Authentication
+  url: authentication/aritma-authentication.yml
+- type: Deprecation
+  url: lifecycle/aritma-lifecycle.yml
+- type: Lifecycle
+  url: lifecycle/aritma-lifecycle.yml
+- type: Conformance
+  url: conformance/aritma-conformance.yml
+- type: LLMsTxt
+  url: llms/aritma-llms.txt
+- type: SecurityTxt
+  url: well-known/aritma-status-security.txt
+- type: WellKnown
+  url: well-known/aritma-well-known.yml
+- type: Hosts
+  url: hosts/aritma-hosts.yml
+- type: Vendors
+  url: vendors/aritma-vendors.yml
+- type: PrivacyPolicy
+  url: https://www.aritma.com/privacy
+- type: Login
+  url: https://www.aritma.com/log-in
+- type: DomainSecurity
+  url: security/aritma-domain-security.yml
 - type: Website
   url: https://aritma.com/
+- type: DeveloperPortal
+  url: https://developer.aritma.com/
+- type: Documentation
+  url: https://developer.aritma.com/
+- type: APIReference
+  url: https://developer.aritma.com/apis/banking/v4
+- type: GettingStarted
+  url: https://developer.aritma.com/getting-started
+- type: Support
+  url: https://help.aritma.com/en
+- type: Blog
+  url: https://www.aritma.com/blog
+- type: Pricing
+  url: https://www.aritma.com/pricing
+- type: StatusPage
+  url: https://status.aritma.com/
+
+apis:
+- name: Banking API v4
+  description: Banking API version 4 providing account, transaction, and payment operations.
+  humanURL: https://developer.aritma.com/apis/banking/v4
+  baseURL: null
+  aid: aritma:banking-api-v4
+- aid: aritma:aritma-api
+  name: Aritma API
+  description: 'Aritma API as documented publicly: 14 operations. Contract generated from the documentation by API Evangelist (2026-10-16); not
+
+    the provider''s own document.'
+  humanURL: https://developer.aritma.com/apis/banking/v4/about/consent.md
+  baseURL: https://bankservice.zdata.no
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/aritma-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/aritma-post-api-bulk-payments-credit-transfer-request-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-get-api-v3-events-deadletters-response-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-put-api-v3-companies-companyid-subscriptions-subscriptionname-reque-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-post-mock-apis-banking-v4-openapi-banking-openapi-bulk-payments-credit-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-get-consents-consentid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-put-consents-id-refresh-response-schema.json
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: The Banking API documentation page is a JavaScript‑rendered SPA with no machine‑readable OpenAPI spec discovered.
+  evidence:
+  - url: https://developer.aritma.com/apis/banking/v4
+    status: 200
+  checked: '2026-10-16'
+x-enrichment:
+  date: '2026-10-16'
+  status: enriched
+  artifacts_added: 26
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

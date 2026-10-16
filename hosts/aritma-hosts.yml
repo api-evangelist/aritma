@@ -1,0 +1,163 @@
+generated: '2026-10-16'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 11
+  own: 10
+  other_domain: 1
+  platform: 0
+  roles:
+  - api
+  - identity
+  - other
+  - partner
+  - portal
+  - status
+  - support
+  - website
+hosts:
+- host: api.aritma.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: aritma.com
+  role: api
+  relation: own
+- host: aritma.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  serves:
+  - cdn
+  vendor: cloudflare
+  registrable_domain: aritma.com
+  role: website
+  relation: own
+- host: bankservice.zdata.no
+  found_by:
+  - apis[]
+  types: []
+  serves:
+  - api
+  registrable_domain: zdata.no
+  role: other
+  relation: other-domain
+- host: customer-portal.aritma.com
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: aritma.com
+  role: other
+  relation: own
+- host: developer.aritma.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - site-links
+  - docs-index
+  - spec-found
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - DeveloperPortal
+  - Documentation
+  - APIReference
+  - GettingStarted
+  serves:
+  - docs
+  - spec
+  - cdn
+  platform: auth.cloud.redocly.com
+  vendor: cloudfront
+  registrable_domain: aritma.com
+  role: portal
+  relation: own
+- host: help.aritma.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - docs-index
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Support
+  serves:
+  - docs
+  - hosting
+  vendor: hubspot
+  registrable_domain: aritma.com
+  role: support
+  relation: own
+- host: knowledge-base.aritma.com
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: aritma.com
+  role: other
+  relation: own
+- host: partner.aritma.com
+  found_by:
+  - probed
+  - site-links
+  - namespace-probe
+  - well-known
+  types: []
+  serves: []
+  title: Aritma AS - Partner Portal
+  status: 200
+  platform: app.introw.io
+  registrable_domain: aritma.com
+  role: partner
+  relation: own
+- host: status.aritma.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - well-known
+  types:
+  - StatusPage
+  serves: []
+  registrable_domain: aritma.com
+  role: status
+  relation: own
+- host: trust.aritma.com
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: aritma.com
+  role: other
+  relation: own
+- host: www.aritma.com
+  found_by:
+  - pointer
+  types:
+  - PrivacyPolicy
+  - Login
+  - Blog
+  - Pricing
+  serves: []
+  registrable_domain: aritma.com
+  role: identity
+  relation: own
