@@ -1,0 +1,103 @@
+openapi: 3.2.0
+info:
+  title: Aritma Banks API
+  version: '2026-10-16'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-16: 14 operation(s) read from 7 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Aritma has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 4
+    documentation: 10
+    pages-with-code: 5
+    pages-read: 7
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-16'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://developer.aritma.com/apis/banking/v4/about/consent.md
+  - https://developer.aritma.com/apis/banking/v4/guides/onboarding
+  - https://developer.aritma.com/apis/banking/v3/webhooks/1-overview
+  - https://developer.aritma.com/apis/banking/v4/guides/onboarding.md
+  - https://developer.aritma.com/apis/banking/v3/webhooks/1-overview.md
+  - https://developer.aritma.com/apis/banking/v4/development/overview.md
+  - https://developer.aritma.com/apis/banking/v4/guides/payment-approval
+servers:
+- url: https://bankservice.zdata.no
+security:
+- bearer: []
+tags:
+- name: Banks
+paths:
+  /banks:
+    get:
+      operationId: get_banks
+      tags:
+      - Banks
+      summary: Call GET /banks to find the bank and get its bankId
+      x-source: https://developer.aritma.com/apis/banking/v4/guides/onboarding
+      parameters:
+      - name: countryCode
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Country code filter.
+      - name: channels
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Channel filter.
+      - name: includeAdditionalInformation
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to include additional information.
+      - name: api-version
+        in: header
+        required: false
+        schema:
+          type: string
+        description: API version header.
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /banks/{bankid}:
+    get:
+      operationId: get_banks_bankid
+      tags:
+      - Banks
+      summary: Use GET /banks/{bankId} with includeAdditionalInformation=true to discover…
+      x-source: https://developer.aritma.com/apis/banking/v4/guides/onboarding
+      parameters:
+      - name: bankid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: includeAdditionalInformation
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to include additional information.
+      - name: api-version
+        in: header
+        required: false
+        schema:
+          type: string
+        description: API version header.
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+components:
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer

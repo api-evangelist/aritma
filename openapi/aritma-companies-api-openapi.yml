@@ -1,0 +1,98 @@
+openapi: 3.2.0
+info:
+  title: Aritma Companies API
+  version: '2026-10-16'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-16: 14 operation(s) read from 7 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Aritma has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 4
+    documentation: 10
+    pages-with-code: 5
+    pages-read: 7
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-16'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://developer.aritma.com/apis/banking/v4/about/consent.md
+  - https://developer.aritma.com/apis/banking/v4/guides/onboarding
+  - https://developer.aritma.com/apis/banking/v3/webhooks/1-overview
+  - https://developer.aritma.com/apis/banking/v4/guides/onboarding.md
+  - https://developer.aritma.com/apis/banking/v3/webhooks/1-overview.md
+  - https://developer.aritma.com/apis/banking/v4/development/overview.md
+  - https://developer.aritma.com/apis/banking/v4/guides/payment-approval
+servers:
+- url: https://bankservice.zdata.no
+security:
+- bearer: []
+tags:
+- name: Companies
+paths:
+  /api/v3/companies/{companyid}/subscriptions/{subscriptionname}:
+    put:
+      operationId: put_api_v3_companies_companyid_subscriptions_subscriptionname
+      tags:
+      - Companies
+      summary: Webhooks Overview
+      x-source: https://developer.aritma.com/apis/banking/v3/webhooks/1-overview
+      parameters:
+      - name: companyid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: subscriptionname
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutApiV3CompaniesCompanyidSubscriptionsSubscriptionnameReque'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutApiV3CompaniesCompanyidSubscriptionsSubscriptionnameRespo'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PutApiV3CompaniesCompanyidSubscriptionsSubscriptionnameReque:
+      type: object
+      properties:
+        eventTypes:
+          type: array
+          description: A comma-delimited list of Event Types.
+        destination:
+          type: object
+          description: Object defining how and where events should be delivered.
+        destination.endpointUrl:
+          type: string
+          description: The url of your webhook endpoint.
+        destination.maxEventsPerBatch:
+          type: integer
+          description: Maximum number of events in a batch (1‑5000).
+        destination.preferredBatchSizeInKilobytes:
+          type: integer
+          description: Preferred batch size in kilobytes (1‑1024).
+      required:
+      - eventTypes
+      - destination
+      - destination.endpointUrl
+    PutApiV3CompaniesCompanyidSubscriptionsSubscriptionnameRespo:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Subscription created successfully.
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer

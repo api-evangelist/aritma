@@ -99,30 +99,198 @@ apis:
   humanURL: https://developer.aritma.com/apis/banking/v4
   baseURL: null
   aid: aritma:banking-api-v4
-- aid: aritma:aritma-api
-  name: Aritma API
-  description: 'Aritma API as documented publicly: 14 operations. Contract generated from the documentation by API Evangelist (2026-10-16); not
-
-    the provider''s own document.'
-  humanURL: https://developer.aritma.com/apis/banking/v4/about/consent.md
+- aid: aritma:aritma-accounts-api
+  name: Aritma Accounts API
+  description: The Accounts API from Aritma — 1 operation(s) for accounts.
+  humanURL: https://developer.aritma.com/apis/banking/v4
   baseURL: https://bankservice.zdata.no
+  tags:
+  - Accounts
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/aritma-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/aritma-accounts-api-openapi.yml
   - type: JSONSchema
     url: json-schema/aritma-post-api-bulk-payments-credit-transfer-request-schema.json
   - type: JSONSchema
     url: json-schema/aritma-get-api-v3-events-deadletters-response-schema.json
   - type: JSONSchema
-    url: json-schema/aritma-put-api-v3-companies-companyid-subscriptions-subscriptionname-reque-schema.json
+    url: >-
+      json-schema/aritma-put-api-v3-companies-companyid-subscriptions-subscriptionname-reque-schema.json
   - type: JSONSchema
-    url: json-schema/aritma-post-mock-apis-banking-v4-openapi-banking-openapi-bulk-payments-credit-schema.json
+    url: >-
+      json-schema/aritma-post-mock-apis-banking-v4-openapi-banking-openapi-bulk-payments-credit-schema.json
   - type: JSONSchema
     url: json-schema/aritma-get-consents-consentid-response-schema.json
   - type: JSONSchema
     url: json-schema/aritma-put-consents-id-refresh-response-schema.json
-
+- aid: aritma:aritma-aritma-api-api
+  name: Aritma Aritma API
+  description: The Aritma API API from Aritma — 1 operation(s) for aritma api.
+  humanURL: https://developer.aritma.com/apis/banking/v4
+  baseURL: https://bankservice.zdata.no
+  tags:
+  - Aritma API
+  properties:
+  - type: OpenAPI
+    url: openapi/aritma-aritma-api-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/aritma-post-api-bulk-payments-credit-transfer-request-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-get-api-v3-events-deadletters-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/aritma-put-api-v3-companies-companyid-subscriptions-subscriptionname-reque-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/aritma-post-mock-apis-banking-v4-openapi-banking-openapi-bulk-payments-credit-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-get-consents-consentid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-put-consents-id-refresh-response-schema.json
+- aid: aritma:aritma-banks-api
+  name: Aritma Banks API
+  description: The Banks API from Aritma — 2 operation(s) for banks.
+  humanURL: https://developer.aritma.com/apis/banking/v4
+  baseURL: https://bankservice.zdata.no
+  tags:
+  - Banks
+  properties:
+  - type: OpenAPI
+    url: openapi/aritma-banks-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/aritma-post-api-bulk-payments-credit-transfer-request-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-get-api-v3-events-deadletters-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/aritma-put-api-v3-companies-companyid-subscriptions-subscriptionname-reque-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/aritma-post-mock-apis-banking-v4-openapi-banking-openapi-bulk-payments-credit-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-get-consents-consentid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-put-consents-id-refresh-response-schema.json
+- aid: aritma:aritma-bulk-payments-api
+  name: Aritma Bulk Payments API
+  description: The Bulk Payments API from Aritma — 1 operation(s) for bulk payments.
+  humanURL: https://developer.aritma.com/apis/banking/v4
+  baseURL: https://bankservice.zdata.no
+  tags:
+  - Bulk Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/aritma-bulk-payments-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/aritma-post-api-bulk-payments-credit-transfer-request-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-get-api-v3-events-deadletters-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/aritma-put-api-v3-companies-companyid-subscriptions-subscriptionname-reque-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/aritma-post-mock-apis-banking-v4-openapi-banking-openapi-bulk-payments-credit-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-get-consents-consentid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-put-consents-id-refresh-response-schema.json
+- aid: aritma:aritma-companies-api
+  name: Aritma Companies API
+  description: The Companies API from Aritma — 1 operation(s) for companies.
+  humanURL: https://developer.aritma.com/apis/banking/v4
+  baseURL: https://bankservice.zdata.no
+  tags:
+  - Companies
+  properties:
+  - type: OpenAPI
+    url: openapi/aritma-companies-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/aritma-post-api-bulk-payments-credit-transfer-request-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-get-api-v3-events-deadletters-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/aritma-put-api-v3-companies-companyid-subscriptions-subscriptionname-reque-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/aritma-post-mock-apis-banking-v4-openapi-banking-openapi-bulk-payments-credit-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-get-consents-consentid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-put-consents-id-refresh-response-schema.json
+- aid: aritma:aritma-consents-api
+  name: Aritma Consents API
+  description: The Consents API from Aritma — 5 operation(s) for consents.
+  humanURL: https://developer.aritma.com/apis/banking/v4
+  baseURL: https://bankservice.zdata.no
+  tags:
+  - Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/aritma-consents-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/aritma-post-api-bulk-payments-credit-transfer-request-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-get-api-v3-events-deadletters-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/aritma-put-api-v3-companies-companyid-subscriptions-subscriptionname-reque-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/aritma-post-mock-apis-banking-v4-openapi-banking-openapi-bulk-payments-credit-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-get-consents-consentid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-put-consents-id-refresh-response-schema.json
+- aid: aritma:aritma-events-api
+  name: Aritma Events API
+  description: The Events API from Aritma — 1 operation(s) for events.
+  humanURL: https://developer.aritma.com/apis/banking/v4
+  baseURL: https://bankservice.zdata.no
+  tags:
+  - Events
+  properties:
+  - type: OpenAPI
+    url: openapi/aritma-events-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/aritma-post-api-bulk-payments-credit-transfer-request-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-get-api-v3-events-deadletters-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/aritma-put-api-v3-companies-companyid-subscriptions-subscriptionname-reque-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/aritma-post-mock-apis-banking-v4-openapi-banking-openapi-bulk-payments-credit-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-get-consents-consentid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-put-consents-id-refresh-response-schema.json
+- aid: aritma:aritma-mock-api
+  name: Aritma Mock API
+  description: The Mock API from Aritma — 2 operation(s) for mock.
+  humanURL: https://developer.aritma.com/apis/banking/v4
+  baseURL: https://bankservice.zdata.no
+  tags:
+  - Mock
+  properties:
+  - type: OpenAPI
+    url: openapi/aritma-mock-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/aritma-post-api-bulk-payments-credit-transfer-request-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-get-api-v3-events-deadletters-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/aritma-put-api-v3-companies-companyid-subscriptions-subscriptionname-reque-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/aritma-post-mock-apis-banking-v4-openapi-banking-openapi-bulk-payments-credit-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-get-consents-consentid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/aritma-put-consents-id-refresh-response-schema.json
 x-coverage:
   state: unreadable
   reason: js-rendered-docs

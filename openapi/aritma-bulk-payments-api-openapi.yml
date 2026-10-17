@@ -1,0 +1,112 @@
+openapi: 3.2.0
+info:
+  title: Aritma Bulk Payments API
+  version: '2026-10-16'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-16: 14 operation(s) read from 7 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Aritma has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 4
+    documentation: 10
+    pages-with-code: 5
+    pages-read: 7
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-16'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://developer.aritma.com/apis/banking/v4/about/consent.md
+  - https://developer.aritma.com/apis/banking/v4/guides/onboarding
+  - https://developer.aritma.com/apis/banking/v3/webhooks/1-overview
+  - https://developer.aritma.com/apis/banking/v4/guides/onboarding.md
+  - https://developer.aritma.com/apis/banking/v3/webhooks/1-overview.md
+  - https://developer.aritma.com/apis/banking/v4/development/overview.md
+  - https://developer.aritma.com/apis/banking/v4/guides/payment-approval
+servers:
+- url: https://bankservice.zdata.no
+security:
+- bearer: []
+tags:
+- name: Bulk Payments
+paths:
+  /api/bulk-payments/credit-transfer:
+    post:
+      operationId: post_api_bulk_payments_credit_transfer
+      tags:
+      - Bulk Payments
+      summary: Initiate a payment via POST /api/bulk-payments/credit-transfer
+      x-source: https://developer.aritma.com/apis/banking/v4/guides/payment-approval
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiBulkPaymentsCreditTransferRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PostApiBulkPaymentsCreditTransferRequest:
+      type: object
+      properties:
+        debtorAccount:
+          type: object
+          description: Debtor account details
+        debtorAccount.iban:
+          type: string
+          description: IBAN of the debtor account
+        debtorName:
+          type: string
+          description: Name of the debtor
+        batchBookingPreferred:
+          type: boolean
+          description: Whether batch booking is preferred
+        paymentLines:
+          type: array
+          description: List of payment line objects
+        paymentLines[].endToEndIdentification:
+          type: string
+          description: End‑to‑end identification for the payment line
+        paymentLines[].instructedAmount:
+          type: object
+          description: Amount to be transferred
+        paymentLines[].instructedAmount.currency:
+          type: string
+          description: Currency code (e.g., NOK)
+        paymentLines[].instructedAmount.amount:
+          type: string
+          description: Amount value
+        paymentLines[].creditorAccount:
+          type: object
+          description: Creditor account details
+        paymentLines[].creditorAccount.iban:
+          type: string
+          description: IBAN of the creditor account
+        paymentLines[].creditorName:
+          type: string
+          description: Name of the creditor
+        paymentLines[].remittanceInformationUnstructured:
+          type: string
+          description: Unstructured remittance information
+        paymentLines[].instructionPriority:
+          type: string
+          description: Priority of the instruction (e.g., normal)
+      required:
+      - debtorAccount
+      - debtorAccount.iban
+      - debtorName
+      - paymentLines
+      - paymentLines[].endToEndIdentification
+      - paymentLines[].instructedAmount
+      - paymentLines[].instructedAmount.currency
+      - paymentLines[].instructedAmount.amount
+      - paymentLines[].creditorAccount
+      - paymentLines[].creditorAccount.iban
+      - paymentLines[].creditorName
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer

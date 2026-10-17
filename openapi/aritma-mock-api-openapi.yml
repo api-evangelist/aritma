@@ -1,0 +1,124 @@
+openapi: 3.2.0
+info:
+  title: Aritma Mock API
+  version: '2026-10-16'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-16: 14 operation(s) read from 7 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Aritma has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 4
+    documentation: 10
+    pages-with-code: 5
+    pages-read: 7
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-16'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://developer.aritma.com/apis/banking/v4/about/consent.md
+  - https://developer.aritma.com/apis/banking/v4/guides/onboarding
+  - https://developer.aritma.com/apis/banking/v3/webhooks/1-overview
+  - https://developer.aritma.com/apis/banking/v4/guides/onboarding.md
+  - https://developer.aritma.com/apis/banking/v3/webhooks/1-overview.md
+  - https://developer.aritma.com/apis/banking/v4/development/overview.md
+  - https://developer.aritma.com/apis/banking/v4/guides/payment-approval
+servers:
+- url: https://bankservice.zdata.no
+security:
+- bearer: []
+tags:
+- name: Mock
+paths:
+  /_mock/apis/banking/v4/openapi/banking-openapi/banks:
+    get:
+      operationId: get_mock_apis_banking_v4_openapi_banking_openapi_banks
+      tags:
+      - Mock
+      summary: GET /_mock/apis/banking/v4/openapi/banking-openapi/banks
+      x-source: https://developer.aritma.com/apis/banking/v4/guides/onboarding
+      parameters:
+      - name: channels
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: countryCode
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: includeAdditionalInformation
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl curl -i -X GET  ''https://developer.aritma.com/_mock/apis/banking/v4/openapi/banking-openapi/banks?countryCode=NO&channels=string&includeAdditionalInformation=true''  -H ''api-version: string'' Note: Some banks include an onboarding field with links to external onboarding documents or pages. Check these for any bank-specific requirements before proceeding. Try it out Loading... Step 2: Create a c'
+  /_mock/apis/banking/v4/openapi/banking-openapi/bulk-payments/credit-transfer:
+    post:
+      operationId: post_mock_apis_banking_v4_openapi_banking_openapi_bulk_payments_credit_transfer
+      tags:
+      - Mock
+      summary: POST /_mock/apis/banking/v4/openapi/banking-openapi/bulk-payments/credit-transfe…
+      x-source: https://developer.aritma.com/apis/banking/v4/guides/payment-approval
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostMockApisBankingV4OpenapiBankingOpenapiBulkPaymentsCredit'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl curl -i -X POST  https://developer.aritma.com/_mock/apis/banking/v4/openapi/banking-openapi/bulk-payments/credit-transfer  -H ''Authorization: Bearer <YOUR_TOKEN_HERE>''  -H ''Channel-Type: unspecified''  -H ''Consent-ID: string''  -H ''Content-Type: application/json''  -H ''PSU-IP-Address: string''  -H ''Resource-Group-Name: string''  -H ''Scopes: /subscriptions/7fdf00601dfb/resource-groups/my-company''  '
+components:
+  schemas:
+    PostMockApisBankingV4OpenapiBankingOpenapiBulkPaymentsCredit:
+      type: object
+      properties:
+        debtorAccount:
+          type: object
+          properties:
+            iban:
+              type: string
+        debtorName:
+          type: string
+        batchBookingPreferred:
+          type: boolean
+        paymentLines:
+          type: array
+          items:
+            type: object
+            properties:
+              endToEndIdentification:
+                type: string
+              instructedAmount:
+                type: object
+                properties:
+                  currency:
+                    type: string
+                  amount:
+                    type: string
+              creditorAccount:
+                type: object
+                properties:
+                  iban:
+                    type: string
+              creditorName:
+                type: string
+              remittanceInformationUnstructured:
+                type: string
+              instructionPriority:
+                type: string
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
