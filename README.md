@@ -64,5 +64,131 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Aritma is a company surfaced via the API Evangelist harvest backlog (source: g2-catalog) and added to the network as a stub for full-pipeline profiling.
-- https://aritma.com/
+Aritma provides a finance automation platform for B2B enterprises, enabling seamless payments, reconciliation, and integration with multiple ERP systems. Their API connects banks, ERP solutions like Microsoft Dynamics 365, Business NXT, Visma, and more, allowing developers to build custom workflows for CFOs, accountants, and IT teams. The platform supports multi‑bank transactions, ISO‑20022 compliance, and offers extensive documentation for developers to integrate financial data across systems.
+
+**Areas:** Company · Finance · Automation · B2B · Payments
+
+## Aritma on APIs.io
+
+Everything profiled for Aritma is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/aritma/](https://apis.io/providers/aritma/)** — or go straight to one of the APIs or properties below.
+
+### APIs (9)
+
+- [Banking API v4](https://apis.io/apis/aritma/banking-api-v4/) — Banking API version 4 providing account, transaction, and payment operations.
+- [Aritma Accounts API](https://apis.io/apis/aritma/aritma-accounts-api/) — The Accounts API from Aritma — 1 operation(s) for accounts.
+- [Aritma Aritma API](https://apis.io/apis/aritma/aritma-aritma-api-api/) — The Aritma API API from Aritma — 1 operation(s) for aritma api.
+- [Aritma Banks API](https://apis.io/apis/aritma/aritma-banks-api/) — The Banks API from Aritma — 2 operation(s) for banks.
+- [Aritma Bulk Payments API](https://apis.io/apis/aritma/aritma-bulk-payments-api/) — The Bulk Payments API from Aritma — 1 operation(s) for bulk payments.
+- [Aritma Companies API](https://apis.io/apis/aritma/aritma-companies-api/) — The Companies API from Aritma — 1 operation(s) for companies.
+- [Aritma Consents API](https://apis.io/apis/aritma/aritma-consents-api/) — The Consents API from Aritma — 5 operation(s) for consents.
+- [Aritma Events API](https://apis.io/apis/aritma/aritma-events-api/) — The Events API from Aritma — 1 operation(s) for events.
+- [Aritma Mock API](https://apis.io/apis/aritma/aritma-mock-api/) — The Mock API from Aritma — 2 operation(s) for mock.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Aritma Webhooks](https://apis.io/asyncapis/aritma/aritma-webhooks/)
+
+#### JSON Schema (6)
+
+The data models the API reads and writes.
+
+- [GetApiV3EventsDeadlettersResponse](https://apis.io/schemas/aritma/aritma-get-api-v3-events-deadletters-response/)
+- [GetConsentsConsentidResponse](https://apis.io/schemas/aritma/aritma-get-consents-consentid-response/)
+- [PostApiBulkPaymentsCreditTransferRequest](https://apis.io/schemas/aritma/aritma-post-api-bulk-payments-credit-transfer-request/)
+- [PostMockApisBankingV4OpenapiBankingOpenapiBulkPaymentsCredit](https://apis.io/schemas/aritma/aritma-post-mock-apis-banking-v4-openapi-banking-openapi-bulk-payments-credit/)
+- [PutApiV3CompaniesCompanyidSubscriptionsSubscriptionnameReque](https://apis.io/schemas/aritma/aritma-put-api-v3-companies-companyid-subscriptions-subscriptionname-reque/)
+- [PutConsentsIdRefreshResponse](https://apis.io/schemas/aritma/aritma-put-consents-id-refresh-response/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Aritma Context](https://apis.io/jsonld/aritma/aritma-context/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Aritma API Rules](https://apis.io/rules/aritma/aritma-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Aritma Authentication](https://apis.io/security/aritma/aritma-authentication/)
+- [Aritma Domain Security](https://apis.io/security/aritma/aritma-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://aritma.com/)
+- [Documentation](https://developer.aritma.com/)
+- [Getting started](https://developer.aritma.com/getting-started)
+- [API reference](https://developer.aritma.com/apis/banking/v4)
+- [Pricing](https://www.aritma.com/pricing)
+- [Support](https://help.aritma.com/en)
+- [Blog](https://www.aritma.com/blog)
+- [Privacy policy](https://www.aritma.com/privacy)
+- [Status](https://status.aritma.com/)
+
+## API Evangelist rating
+
+**Kin Score 42.5** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 69.6 |
+| Contract quality | 35.8 |
+| Contract governance | 19.7 |
+| Operational transparency | 42.1 |
+| Developer ergonomics | 63.6 |
+| Access clarity | 34.2 |
+
+**Agent readiness 26.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | unknown |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | — |
+
+**Regulatory alignment 18.8** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/aritma/](https://apis.io/providers/aritma/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Aritma: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/aritma/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
